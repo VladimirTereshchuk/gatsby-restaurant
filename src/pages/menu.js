@@ -1,14 +1,15 @@
 import React from "react"
-// import { Link } from "gatsby"
-import { FaBeer } from "react-icons/fa"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
-const MenuPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h2>this is menu page</h2>
-  </Layout>
-)
-
-export default MenuPage
+import { PageHeader, Banner } from "../utils"
+import img from "../images/bcg/menuBcg.jpeg"
+export default function about() {
+  return (
+    <Layout>
+      <SEO title="Menu" />
+      <PageHeader img={img}>
+        <Banner title="our menu" subtitle={`let's dig in`} />
+      </PageHeader>
+    </Layout>
+  )
+}

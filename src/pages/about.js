@@ -1,13 +1,15 @@
 import React from "react"
-// import { Link } from "gatsby"
-// import { FaBeer } from "react-icons/fa"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { PageHeader, Banner } from "../utils"
+import img from "../images/bcg/aboutBcg.jpeg"
 
 const AboutPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h3>this is about page</h3>
+    <PageHeader img={img}>
+      <Banner title="about us" subtitle="a little about us" />
+    </PageHeader>
   </Layout>
 )
 

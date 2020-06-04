@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 // import styled from 'styled-components'
 import { createGlobalStyle } from "styled-components"
 import Navbar from "../components/globals/navbar/Navbar"
-// import Footer from "../components/Global/Footer"
+import Footer from "../components/globals/Footer"
 // import '../styles/sass/layout.scss'
 
 const Layout = ({ children }) => (
@@ -11,7 +11,7 @@ const Layout = ({ children }) => (
     <GlobalStyle />
     <Navbar />
     {children}
-    {/* <Footer /> */}
+    <Footer />
   </div>
 )
 

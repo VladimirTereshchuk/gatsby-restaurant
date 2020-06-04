@@ -38,8 +38,8 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Indie Flower`,
-            // subsets: [`latin`],
+            family: `Caveat`,
+            subsets: [`latin`],
           },
           {
             family: `Open Sans`,
