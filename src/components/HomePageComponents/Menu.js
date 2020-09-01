@@ -2,6 +2,8 @@ import React from "react"
 import Product from "./Product"
 import { useStaticQuery, graphql } from "gatsby"
 import { Section, Title, SectionButton } from "../../utils"
+import styled from "styled-components"
+import Link from "gatsby"
 
 const query = graphql`
   {
@@ -11,8 +13,8 @@ const query = graphql`
           composition
           id
           img {
-            fluid {
-              src
+            fixed(width: 150, height: 150) {
+              ...GatsbyContentfulFixed
             }
           }
           name
@@ -31,8 +33,32 @@ export default function Menu() {
   console.log(menuItems)
   return (
     <Section>
-      <Title title="featured items" message="little taste" />
-      <Product />
+      <Title title="popular dishes" message="little taste" />
+      <ProductList>
+        {menuItems.edges.map(({ node }, index) => {
+          return <Product key={node.id} product={node} />
+        })}
+      </ProductList>
     </Section>
   )
 }
+
+const ProductList = styled.div`
+  margin: 3rem 0;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-row-gap: 3rem;
+  @media (min-width: 576px) {
+    grid-template-columns: 95%;
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: 80%;
+    justify-content: center;
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+  }
+`
